@@ -12,7 +12,7 @@ class TestCalculadora(unittest.TestCase):
         self._calculadora = Calculadora(pessoa)
 
     def test_calcular_geb(self):
-        geb = self._calculadora.calcular_geb()
+        geb = self._calculadora.calcular_geb() 
         self.assertEqual(1044.9, geb)
 
     def test_calcular_calorias_diarias(self):

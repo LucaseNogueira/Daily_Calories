@@ -12,7 +12,7 @@ class Calculadora:
     def calcular_calorias_diarias(self) -> float:
         '''Calcula as calorias diárias da pessoa setada na calculadora
 
-        Exemple:
+        Example:
         - homem: GEB * 66.5
 
         Outputs:
@@ -23,7 +23,7 @@ class Calculadora:
     def calcular_geb(self) -> float:
         '''Calcula o gasto energético basal (GEB) conforme o peso, altura e idade da pessoa.
 
-        Exemple:
+        Example:
         - homem: (13,75 x peso em quilos) + (5 x altura em centímetros) – (6,76 x idade em anos) + 66,5
         
         Outputs

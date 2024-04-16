@@ -29,7 +29,16 @@ class Pessoa:
         return self._idade
 
     @property
-    def fator_peso(self):
+    def fator_peso(self) -> float:
+        '''Retorna o fator que será multiplicado com o peso da pessoa para integrar no calculo do gasto energético basal. Este fator é estimado de acordo com o sexo da pessoa.
+
+        Example:
+        - Se pessoa.sexo for igual a Masculino então retorne 13.75
+        - Se pessoa.sexo for igual a Feminino então retorne 9.56
+
+        Outputs:
+        - Fator peso
+        '''
         if self._fator_peso == None:
             if self._sexo == 1:
                 self._fator_peso = 13.75
@@ -38,7 +47,16 @@ class Pessoa:
         return self._fator_peso
 
     @property
-    def fator_altura(self):
+    def fator_altura(self) -> float:
+        '''Retorna o fator que será multiplicado com a altura da pessoa para integrar no calculo do gasto energético basal. Este fator é estimado de acordo com o sexo da pessoa.
+
+        Example:
+        - Se pessoa.sexo for igual a Masculino então retorne 5
+        - Se pessoa.sexo for igual a Feminino então retorne 1.85
+
+        Outputs:
+        - Fator altura
+        '''
         if self._fator_altura == None:
             if self._sexo == 1:
                 self._fator_altura = 5
@@ -47,7 +65,16 @@ class Pessoa:
         return self._fator_altura
 
     @property
-    def fator_idade(self):
+    def fator_idade(self) -> float:
+        '''Retorna o fator que será multiplicado com a idade da pessoa para integrar no calculo do gasto energético basal. Este fator é estimado de acordo com o sexo da pessoa.
+
+        Example:
+        - Se pessoa.sexo for igual a Masculino então retorne 6.76
+        - Se pessoa.sexo for igual a Feminino então retorne 4.68
+
+        Outputs:
+        - Fator peso
+        '''
         if self._fator_idade == None:
             if self._sexo == 1:
                 self._fator_idade = 6.76
@@ -56,7 +83,16 @@ class Pessoa:
         return self._fator_idade
 
     @property
-    def fator_atividade_fisica(self):
+    def fator_atividade_fisica(self) -> float:
+        '''Retorna o fator que será multiplicado com o gasto energético basal da pessoa no calculo de calórias diárias. Este fator é estimado de acordo com a pratica de atividade fisica da pessoa.
+
+        Example:
+        - Se pessoa.atividade_fisica for igual a Sedentário então retorne 1.2
+        - Se pessoa.atividade_fisica for igual a Levemente Ativo então retorne 1.375
+
+        Outputs:
+        - Fator atividade fisica
+        '''
         if self._fator_atividade_fisica == None:
             if self._atividade_fisica == 1:
                 self._fator_atividade_fisica = 1.2
