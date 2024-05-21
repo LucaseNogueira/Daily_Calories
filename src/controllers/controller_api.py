@@ -4,6 +4,7 @@ sys.path.append('.')
 
 from src.controllers.calculadora import Calculadora
 from src.models.pessoa import Pessoa
+from src.models.pessoa_response import PessoaResponse
 
 class ControllerApi:
     
@@ -29,5 +30,6 @@ class ControllerApi:
             atividade_fisica=atividade_fisica
         )
         calculadora = Calculadora(pessoa)
-        calorias_diarias = {'daily_calories':calculadora.calcular_calorias_diarias()}
-        return json.dumps(calorias_diarias, ensure_ascii=False)
+        calorias_diarias = calculadora.calcular_calorias_diarias()
+        resposta = PessoaResponse(calorias_diarias)
+        return resposta.to_dict
