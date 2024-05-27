@@ -27,6 +27,10 @@ class Pessoa:
     @property
     def idade(self):
         return self._idade
+    
+    @property
+    def atividade_fisica(self):
+        return self._atividade_fisica
 
     @property
     def fator_peso(self) -> float:

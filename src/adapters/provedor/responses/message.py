@@ -1,5 +1,5 @@
-from src.models.interfaces.message_interface import MessageInterface
-from src.models.interfaces.response_interface import ResponseInterface
+from src.adapters.interfaces.responses.message_interface import MessageInterface
+from src.adapters.interfaces.responses.response_interface import ResponseInterface
 from http import HTTPStatus
 from datetime import datetime
 
