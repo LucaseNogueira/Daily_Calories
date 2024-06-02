@@ -2,7 +2,7 @@ import traceback
 
 from src.utils.interfaces.log_request_interface import LogRequestInterface
 from datetime import datetime
-from src.models.message import Message
+from src.adapters.provedor.responses.message import Message
 from src.utils.string_utils import StringUtils
 from src.utils.file_utils import FileUtils
 
