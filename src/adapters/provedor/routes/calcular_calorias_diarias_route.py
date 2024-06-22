@@ -13,7 +13,8 @@ class CalcularCaloriasDiariasRoute:
     @classmethod
     def get_gasto_calorico_diario(self,sexo: int, peso: float, altura: float, idade: int, atividade_fisica: int, token:str):
         try:
-            self.validaToken(token)
+            if not self.validaToken(self,token):
+                raise ValueError('Token JWT inválido')
             request = CalcularCaloriasDiariasRequest(sexo,peso,altura,idade,atividade_fisica)
             calcular_use_case = CalcularCaloriasDiariasUseCase(CalculaGEBAdapter(BoPessoaAdapter()), CalculaCaloriasDiariasAdapter(BoPessoaAdapter()))
             calorias_diarias_response = CalcularCaloriasDiariasResponse(calcular_use_case.execute(request.to_domain()))
@@ -21,18 +22,12 @@ class CalcularCaloriasDiariasRoute:
             message.set_body(calorias_diarias_response.to_dict)
             return message.to_dict
         except ValueError as e:
-            message = MessageNotFound(str(e))
-            log = LogRequest(message)
-            log.cadastrar
-            return message.to_dict
-        except Exception:
-            message = MessageInternaServerlError('Ocorreu uma falha interna no servidor')
-            log = LogRequest(message)
-            log.cadastrar
-            return message.to_dict
+                message = MessageNotFound(str(e))
+                ##log = LogRequest(message) no docker ele não funciona, talvez por questão de permissão
+                ##log.cadastrar()
+                return message.to_dict
+        
     
     def validaToken(self, token:str):
         response = ControllerConsumerServiceGETMethod('http://auth:8080/auth/validate', token)
-        if response == False:
-            raise ValueError('O token informado é invalido')
-        return response
+        return response.execute()

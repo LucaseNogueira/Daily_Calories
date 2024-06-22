@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Depends
 from src.adapters.provedor.routes.calcular_calorias_diarias_route import CalcularCaloriasDiariasRoute
+from fastapi.security import OAuth2PasswordBearer
 
 app = FastAPI()
 
