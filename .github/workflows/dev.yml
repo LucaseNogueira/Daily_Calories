@@ -103,3 +103,6 @@ jobs:
           push: true
           tags: |
             lucasnogueira1325/ese-dailycalories:v1
+            
+      - name: Logout from Docker Hub
+        run: docker logout
