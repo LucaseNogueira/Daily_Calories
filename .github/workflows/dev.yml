@@ -78,7 +78,7 @@ jobs:
         uses: docker/build-push-action@v6.1.0
         with:
           context: .
-          file: ./dockerfile
+          file: dockerfile
           push: true
           tags: |
             lucasnogueira1325/ese-dailycalories:v1
