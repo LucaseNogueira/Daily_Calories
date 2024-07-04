@@ -1,8 +1,6 @@
 # Use a imagem oficial do Python como base
 FROM python:3.10-slim
 
-RUN mkdir -p /app
-
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
@@ -19,4 +17,6 @@ COPY . .
 EXPOSE 8081
 
 # Comando para rodar a aplicação
+
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8081"]
+
