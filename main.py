@@ -9,7 +9,6 @@ from dotenv import load_dotenv
 load_dotenv()
 env = os.getenv("ENV")
 
-
 app = FastAPI()
 
 Instrumentator().instrument(app).expose(app)

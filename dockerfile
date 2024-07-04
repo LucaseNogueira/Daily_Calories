@@ -17,4 +17,6 @@ COPY . .
 EXPOSE 8081
 
 # Comando para rodar a aplicação
+
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8081"]
+
