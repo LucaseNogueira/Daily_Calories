@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 env = os.getenv("ENV")
 
+from fastapi.security import OAuth2PasswordBearer
 
 app = FastAPI()
 
